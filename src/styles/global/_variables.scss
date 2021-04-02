@@ -1,0 +1,19 @@
+$green-dark: #3f8f74;
+$pure-dark: #000000;
+$pure-white: #ffffff;
+
+$colors: (
+  'primary': (
+    'base': $green-dark
+  ),
+  'secondary': (
+    'base': $pure-dark
+  ),
+  'tertiary': (
+    'base': $pure-white
+  )
+);
+
+@function get-color($key: 'primary', $type: 'base') {
+  @return map-get($colors, $key, $type);
+}

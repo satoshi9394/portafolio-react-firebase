@@ -1,0 +1,26 @@
+$movile: 'movile';
+$tablet: 'tablet';
+$desktop: 'desktop';
+
+$defaulMaxWidth: 100%;
+$movileMaxWidth: 375px;
+$tabletMaxWidth: 470px;
+$desktopMaxWidth: 100%;
+
+$breakpoints: (
+  'movile': (min-width: 375px),
+  'tablet': (min-width: 768px),
+  'desktop': (min-width: 1440px)
+) !default;
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}

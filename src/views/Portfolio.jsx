@@ -3,9 +3,9 @@ import React from 'react'
 const Portfolio = () => {
   return (
     <div>
-      Main del proyecto
+      Portafoli
     </div>
   )
 }
 
-export default Portfolio
+export default Portfolio;

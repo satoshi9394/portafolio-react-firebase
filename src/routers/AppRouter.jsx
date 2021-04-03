@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 
 
-import AuthRouter from './AuthRouter';
+import PortfoliRouter from './PortfoliRouter';
 import PublicRouter from './PublicRouter';
 import PrivateRouter from './PrivateRouter';
 
@@ -21,12 +21,11 @@ const AppRouter = () => {
       <div>
         <Switch>
           <PublicRouter
-            exact
-            path="/"
-            component={AuthRouter}
+            path="/portafolio"
+            component={PortfoliRouter}
             isAuthenticated={ isLoggedIn }
           />
-          <PrivateRouter 
+          <PrivateRouter
             path="/admin" 
             component={ Admin }
             isAuthenticated={ isLoggedIn }

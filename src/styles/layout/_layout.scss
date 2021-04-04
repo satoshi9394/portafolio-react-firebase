@@ -1,12 +1,10 @@
-#app {
-  height: 100%;
+.app__portfolio {
+  width: 100vw;
   display: grid;
-  grid-template-rows: 0.3fr 1fr 20px;
+  grid-template-rows: 0.1fr 1fr 20px;
 }
 
 .container {
   padding: 10px 10px;
-  width: $defaulMaxWidth;
   color: get-color('tertiary');
-  background-color: get-color('secondary');
 }

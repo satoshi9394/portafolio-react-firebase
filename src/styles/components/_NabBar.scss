@@ -1,0 +1,30 @@
+.header {
+  background-color: get-color('secondary');
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+  &__title {
+    padding: 10px 5px;
+    font-size: 50px;
+    font-weight: bold;
+    color: get-color('tertiary');
+    text-decoration: none;
+  }
+  &__button {
+    font-weight: bold;
+    align-content: flex-end;
+    border-radius: 15px 0 15px 0;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translate(0, -50%);
+    padding: 10px 20px;
+    background-color: get-color('primary');
+    font-size: 1.2rem;
+    color: get-color('tertiary');
+    &:hover {
+      background-color: get-color('tertiary');
+      color: get-color('primary');
+    }
+  }
+}

@@ -1,17 +1,32 @@
+$biscay: #194769;
+$crusta: #F2855E;
+$rosa-bud: #FFA6A3;
+$green-light: #6FEF8D;
 $green-dark: #3f8f74;
-$pure-dark: #000000;
+$pure-black: #000000;
 $pure-white: #ffffff;
 
 $colors: (
   'primary': (
-    'base': $green-dark
+    'base': $biscay
   ),
   'secondary': (
-    'base': $pure-dark
+    'base': $crusta
   ),
   'tertiary': (
+    'base': $green-light,
+    'dark': $green-dark
+  ),
+  'fourth': (
+    'base': $rosa-bud
+  ),
+  'clear': (
     'base': $pure-white
-  )
+  ),
+  'dark': (
+    'base': $pure-black,
+    'opacity': rgba($pure-black, 0.7)
+  ),
 );
 
 @function get-color($key: 'primary', $type: 'base') {

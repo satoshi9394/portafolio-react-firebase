@@ -7,7 +7,7 @@ import Footer from '../components/Footer';
 
 const AuthRouter = () => {
   return (
-    <div>
+    <div className="app__portfolio">
       <NavBar/>
       <div className="container">
         <Switch>

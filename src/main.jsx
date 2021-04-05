@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/main.scss';
-import AppRouter from './routers/AppRouter';
+import PortfolioApp from './PortfolioApp';
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <AppRouter />
+    <PortfolioApp />
   </React.StrictMode>,
   document.getElementById('root')
 )

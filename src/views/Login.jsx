@@ -1,20 +1,40 @@
-import React from 'react'
-import useForm from '../hooks/useForm'
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import validator from 'validator';
+import { startLogingEmailPassword } from '../actions/auth';
+import { removeError, setError } from '../actions/ui';
+import useForm from '../hooks/useForm';
 
 const Login = () => {
-  console.log('vista de login');
+
+  const dispatch = useDispatch()
+  const { loading } = useSelector(state => state.ui);
+  
   const [ formValues, handleInputChange , reset] = useForm({
-    email: 'usuario1@gmail.com',
+    email: 'angelsb94@gmail.com',
     password: '123456'
   });
-
-  const loading =  false;
 
   const { email, password } = formValues;
 
   const handleLogin = (e) => {
     e.preventDefault();
-    console.log('hice submit')
+    if (isFormValid()) {
+      dispatch( startLogingEmailPassword(email, password) );
+      reset();
+    }
+  }
+
+  const isFormValid = () => {
+    if(!validator.isEmail(email)) {
+      dispatch( setError('Email no valido') );
+      return false;
+    } else if( password.length <= 5) {
+      dispatch( setError('Password muy corto') );
+      return false;
+    }
+    dispatch(removeError());
+    return true;
   }
 
   return (
